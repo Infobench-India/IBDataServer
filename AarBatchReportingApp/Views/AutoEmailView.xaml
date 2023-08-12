@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="AarBatchReportingApp.Views.AutoEmailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AarBatchReportingApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="15" FontWeight="Bold" Text="Scheduler Report Configuration" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18"></TextBlock>
+        
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+            <Label Content="Recipient Email:"></Label>
+            <TextBox Text="{Binding Email, ValidatesOnDataErrors=true ,UpdateSourceTrigger=PropertyChanged}" Height="30" Width="230">
+                
+            </TextBox>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="3" Orientation="Horizontal">
+            <Button Width="80" Content="Add" Margin="5" Command="{Binding AddCommand}" Foreground="#FFF3E9E9" BorderBrush="Black" Background="#FF130E89" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="4" Orientation="Horizontal">
+            <Button Width="80" Content="update" Margin="5" Command="{Binding UpdateCommand}" Foreground="#FFF3E9E9" BorderBrush="Black" Background="LightSeaGreen" />
+        </StackPanel>
+        <StackPanel Grid.Row="2" Grid.Column="5" Orientation="Horizontal">
+            <Button Width="80" Content="Delete" Margin="5" Command="{Binding DeleteCommand}" Foreground="#FFF3E9E9" BorderBrush="Black" Background="Red" />
+        </StackPanel>
+        <DataGrid Grid.Row="3" Grid.Column="0" Grid.RowSpan="10" Grid.ColumnSpan="12" ItemsSource="{Binding DataSource}" IsReadOnly="True" SelectedItem="{Binding SelectedRow}"></DataGrid>
+    </Grid>
+</UserControl>

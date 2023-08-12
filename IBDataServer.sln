@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBDataServer", "AarBatchReportingApp\IBDataServer.csproj", "{A226BBB9-B4C5-4A0A-9D49-D5724C803366}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IBDataServerInstaller", "AarBatchReportingAppSetup\AarBatchReportingAppSetup.vdproj", "{9F157169-7970-4068-BF6B-BBAC84A21BBC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A226BBB9-B4C5-4A0A-9D49-D5724C803366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A226BBB9-B4C5-4A0A-9D49-D5724C803366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A226BBB9-B4C5-4A0A-9D49-D5724C803366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A226BBB9-B4C5-4A0A-9D49-D5724C803366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F157169-7970-4068-BF6B-BBAC84A21BBC}.Debug|Any CPU.ActiveCfg = Debug
+		{9F157169-7970-4068-BF6B-BBAC84A21BBC}.Debug|Any CPU.Build.0 = Debug
+		{9F157169-7970-4068-BF6B-BBAC84A21BBC}.Release|Any CPU.ActiveCfg = Release
+		{9F157169-7970-4068-BF6B-BBAC84A21BBC}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {033958DE-CF88-46C5-B7BA-B671C6FCB66A}
+	EndGlobalSection
+EndGlobal

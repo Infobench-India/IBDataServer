@@ -1,0 +1,8 @@
+{ 
+"Connection" :{"ConnectionString":"Data Source=LENOVO-PC\\MSSQLSERVER2014;Initial Catalog=Report_DB_ALL_PTCED;Integrated Security=True;",
+"ConnectionString1":"Data Source=LENOVO-PC\\MSSQLSERVER2014;Initial Catalog=ALL_BATCH_REPORT_DB;Integrated Security=True;",
+"ConnectionString2":"Data Source=LENOVO-PC\\MSSQLSERVER2014;Initial Catalog=ALL_BATCH_SEC;Integrated Security=True;"	  	  	  
+	  },
+
+"ExportFolder":"F:\\2020\\PlushCon\\Report Template\\Export"
+}

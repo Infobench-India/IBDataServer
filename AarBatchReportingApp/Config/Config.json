@@ -1,0 +1,47 @@
+{
+	"Connection": {
+		"ConnectionString": "Data Source=127.0.0.1,1433;Initial Catalog=plushcon; User ID=sa;Password=Welcome@1;",
+		"ConnectionString1": "Data Source=DESKTOP-N16JDJ5\\SQLEXPRESS;Initial Catalog=Report_DB_ALL_TOP_COAT;Integrated Security=True;",
+		"ConnectionString2": "Data Source=LENOVO-PC\\MSSQLSERVER2014;Initial Catalog=ALL_BATCH_SEC;Integrated Security=True;",
+		"AlarmReportConnectionString": "Server=localhost\\SQLEXPRESS01;Database=master;Trusted_Connection=True;"
+	},
+
+	"ExportFolder": "F:\\2020\\PlushCon\\Report Template\\Export",
+
+	"Reports": {
+		"Alarm": {
+			"creticalWiseAnalysis": {
+				"tableName": "[sample_alarm]",
+				"templateName": "Hourly  Report.xlsx",
+				"columns": "ACED_Area,Alarm_Details,Status",
+				"connectionString": "Server=localhost\\SQLEXPRESS01;Initial Catalog=alarm;Trusted_Connection=True;",
+				"query": "",
+				"variables": [{
+					"variable": "",
+					"value": ""
+				}]
+			},
+			"dailyReport": {
+				"tableName": "daily",
+				"templateName": "Daily Report.xlsx",
+				"columns": "CP12_Tc_Oven_KWh_Hourly,CP13_Tc_Oven_KWh_Hourly"
+			}
+		},
+
+
+		"PTED": {
+			"hourlyReport": {
+				"tableName": "Report_DB_Runner_PTED_Line",
+				"templateName": "PTED Hourly Report.xlsx",
+				"columns": "CP1_PT,CP2_CED,CP3_RECTIFIER,CP4_ED_OVEN,CP5_DM_PLANT,CP6_CHILLER,FU_1,FU_2,HW_BURNER,PRE_DEG_BURNER,DEG_BURNER,PHOS_BURNER,ED_OVEN_BURNER,FU_3,IW,DI,FU_4,TOTAL_PROD_HANGERS"
+
+			},
+			"dailyReport": {
+				"tableName": "Report_DB_Runner_PTED_Line",
+				"templateName": "PTED Daily Report.xlsx",
+				"columns": "SUM([CP1_PT]),SUM([CP2_CED]),SUM([CP3_RECTIFIER]),SUM([CP4_ED_OVEN]),SUM([CP5_DM_PLANT]),SUM([CP6_CHILLER]),SUM([FU_1]),SUM([FU_2]),SUM([HW_BURNER]),SUM([PRE_DEG_BURNER]),SUM([DEG_BURNER]),SUM([PHOS_BURNER]),SUM([ED_OVEN_BURNER]),SUM([FU_3,SUM([IW]),SUM([DI]),SUM([FU_4]),SUM([TOTAL_PROD_HANGERS])"
+			}
+		}
+	}
+
+}
