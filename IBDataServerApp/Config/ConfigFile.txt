@@ -1,0 +1,8 @@
+192.168.1.5:5000
+Data Source=localhost\SQLEXPRESS01;Initial Catalog=alarm;Trusted_Connection=True;
+1
+No
+20
+HMIUser1,HMIUser2
+DataLogger1,DataLogger2
+HMIUser2DataLogger1,HMIUser2DataLogger2

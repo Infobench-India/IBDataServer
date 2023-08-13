@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBDataServer", "AarBatchReportingApp\IBDataServer.csproj", "{A226BBB9-B4C5-4A0A-9D49-D5724C803366}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IBDataServer", "IBDataServerApp\IBDataServer.csproj", "{A226BBB9-B4C5-4A0A-9D49-D5724C803366}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IBDataServerInstaller", "AarBatchReportingAppSetup\AarBatchReportingAppSetup.vdproj", "{9F157169-7970-4068-BF6B-BBAC84A21BBC}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "IBDataServerInstaller", "IBDataServerAppSetup\IBDataServerAppSetup.vdproj", "{98797C93-B9DB-4AFD-88BA-83F3C130EF6F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{A226BBB9-B4C5-4A0A-9D49-D5724C803366}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A226BBB9-B4C5-4A0A-9D49-D5724C803366}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A226BBB9-B4C5-4A0A-9D49-D5724C803366}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9F157169-7970-4068-BF6B-BBAC84A21BBC}.Debug|Any CPU.ActiveCfg = Debug
-		{9F157169-7970-4068-BF6B-BBAC84A21BBC}.Debug|Any CPU.Build.0 = Debug
-		{9F157169-7970-4068-BF6B-BBAC84A21BBC}.Release|Any CPU.ActiveCfg = Release
-		{9F157169-7970-4068-BF6B-BBAC84A21BBC}.Release|Any CPU.Build.0 = Release
+		{98797C93-B9DB-4AFD-88BA-83F3C130EF6F}.Debug|Any CPU.ActiveCfg = Debug
+		{98797C93-B9DB-4AFD-88BA-83F3C130EF6F}.Debug|Any CPU.Build.0 = Debug
+		{98797C93-B9DB-4AFD-88BA-83F3C130EF6F}.Release|Any CPU.ActiveCfg = Release
+		{98797C93-B9DB-4AFD-88BA-83F3C130EF6F}.Release|Any CPU.Build.0 = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

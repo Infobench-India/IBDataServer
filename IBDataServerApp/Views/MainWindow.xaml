@@ -1,0 +1,158 @@
+﻿<Window x:Class="IBDataServerApp.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:views="clr-namespace:IBDataServerApp.Views"
+        xmlns:localVMs="clr-namespace:IBDataServerApp.ViewModels"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:md="https://github.com/fantasticfiasco/mvvm-dialogs"
+        mc:Ignorable="d"
+        Title="{Binding Title}"
+        WindowState="Maximized"
+        WindowStyle="ThreeDBorderWindow">
+
+    <Window.Resources>
+        <!-- Insert here your Data Templates -->
+        <DataTemplate x:Key="SampleTemplate">
+            <StackPanel/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type localVMs:ScheduleReportViewModel}">
+            <views:ScheduleReportView DataContext="{Binding}"></views:ScheduleReportView>
+        </DataTemplate>
+        <DataTemplate  DataType="{x:Type localVMs:ManageReportViewModel}">
+            <views:ManageReports DataContext="{Binding}"></views:ManageReports>
+        </DataTemplate>
+        <DataTemplate  DataType="{x:Type localVMs:GenerateReportViewModel}">
+            <views:GenerateReports DataContext="{Binding}"></views:GenerateReports>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type localVMs:LogInViewModel}">
+            <views:LogIn DataContext="{Binding}"></views:LogIn>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type localVMs:UserManagementViewModel}">
+            <views:UserManagements DataContext="{Binding}"></views:UserManagements>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type localVMs:TodaysSchedulerViewModel}">
+            <views:TodaysSchedulerView DataContext="{Binding}"></views:TodaysSchedulerView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type localVMs:SchedulerViewModel}">
+            <views:SchedulerView DataContext="{Binding}"></views:SchedulerView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type localVMs:ToleranceSettingViewModel}">
+            <views:ToleranceSetting DataContext="{Binding}"></views:ToleranceSetting>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type localVMs:AlarmReportsViewModel}">
+            <views:AlarmReports DataContext="{Binding}"></views:AlarmReports>
+        </DataTemplate>
+    </Window.Resources>
+    <Window.InputBindings>
+        <!-- Example of Keyboard shortcuts -->
+        <!--<KeyBinding Command="{Binding SaveCmd}" Key="S" Modifiers="Ctrl" />
+        <KeyBinding Command="{Binding SaveAsCmd}" Gesture="Ctrl+Shift+S" />
+        <KeyBinding Command="{Binding OpenCmd}" Gesture="Ctrl+O" />
+        <KeyBinding Command="{Binding NewCmd}" Gesture="Ctrl+N" />-->
+        <KeyBinding Command="{Binding ExitCmd}" Gesture="Alt+F4" />
+    </Window.InputBindings>
+
+    <DockPanel >
+        <!-- File Menu -->
+        <Grid DockPanel.Dock="Top">
+            <Rectangle Fill="LightCyan" />
+            <TextBlock HorizontalAlignment="Center" Text="Infobench Data Server" Margin="5" FontSize="24" FontFamily="Times New Roman" FontStyle="Italic" FontWeight="Bold" Foreground="#FF217B8F"/>
+            <Label  Content="{Binding LoggedUserName }" HorizontalAlignment="Right"></Label>
+        </Grid>
+        <Grid DockPanel.Dock="Bottom">
+            <Rectangle Fill="LightCyan" />
+            <TextBlock HorizontalAlignment="Center" Text="All rights reserved. Infobench Solutions 2020-2021 " Margin="5" FontSize="10" FontFamily="Times New Roman" FontStyle="Italic"/>
+        </Grid>
+        <Menu DockPanel.Dock="Top" Margin="0,0,0,0" Background="AliceBlue">
+            <Image Source="infobench Logo.png" Stretch="UniformToFill" Height="33" Width="128" OpacityMask="Black" />
+            <!--<MenuItem Header="HOME" FontSize="17" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <MenuItem.Icon>
+                    <Image Source="/IBDataServerApp;component/Components/Images/Home_black.png" Height="23" Width="27" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </MenuItem.Icon>
+            </MenuItem>-->
+            <MenuItem Header="Server"  FontSize="17" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="{Binding IsLoggedUser}">
+                <MenuItem.Icon>
+                    <Image Source="Setting.png" Height="23" Width="27" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </MenuItem.Icon>
+                <MenuItem Header="Start Server" Command="{Binding SwitchScheduleReportCommand}">
+                    <MenuItem.Icon>
+                        <Image Source="/IBDataServerApp;component/Components/Images/Report.png" Height="23" Width="27" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="LogIn" FontSize="17" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding SwitchLogInViewCommand}" Foreground="{DynamicResource {x:Static SystemColors.DesktopBrushKey}}">
+                <MenuItem.Icon>
+                    <Image Source="LogIn.png" Height="23" Width="27" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Logout" FontSize="17" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding LogOutCommand}" InputGestureText="Alt+F4" Foreground="{DynamicResource {x:Static SystemColors.DesktopBrushKey}}">
+                <MenuItem.Icon>
+                    <Image Source="LogOut.png" Height="23" Width="27" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </MenuItem.Icon>
+            </MenuItem>
+            <MenuItem Header="Exit" FontSize="17" Background="{x:Null}" HorizontalAlignment="Center" VerticalAlignment="Center" Command="{Binding ExitCmd}" InputGestureText="Alt+F4" Foreground="{DynamicResource {x:Static SystemColors.DesktopBrushKey}}">
+                <MenuItem.Icon>
+                    <Image Source="Exit.png" Height="23" Width="27" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                </MenuItem.Icon>
+            </MenuItem>
+        </Menu>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <!--<Image Grid.Row="0" Grid.Column="0" Grid.RowSpan="20" Grid.ColumnSpan="20" Source="/IBDataServerApp;component/Components/Images/Background.jpg" Stretch="UniformToFill"></Image>-->
+            <ContentControl Grid.Row="3" Grid.Column="6" Grid.RowSpan="10" Grid.ColumnSpan="7" Content="{Binding SelectedViewModel}" Visibility="{Binding LogInViewVisibility}" ></ContentControl>
+            <ContentControl Grid.Row="0" Grid.Column="0" Grid.RowSpan="20" Grid.ColumnSpan="20" Content="{Binding SelectedViewModel}" Visibility="{Binding MainViewVisibility}"></ContentControl>
+            <ContentControl Grid.Row="0" Grid.Column="0" Grid.RowSpan="20" Grid.ColumnSpan="20" Content="{Binding SelectedViewModel}" Visibility="{Binding DailySchedulerVisibility}"></ContentControl>
+            <ContentControl Grid.Row="0" Grid.Column="0" Grid.RowSpan="20" Grid.ColumnSpan="20" Content="{Binding SelectedViewModel}" Visibility="{Binding TodaysSchedulerVisibility}"></ContentControl>
+            <ContentControl Grid.Row="0" Grid.Column="0" Grid.RowSpan="20" Grid.ColumnSpan="20" Content="{Binding SelectedViewModel}" Visibility="{Binding AutoEmailVisibility}"></ContentControl>
+            <ContentControl Grid.Row="0" Grid.Column="0" Grid.RowSpan="20" Grid.ColumnSpan="20" Content="{Binding SelectedViewModel}" Visibility="{Binding AlarmReportsVisibility}"></ContentControl>
+        </Grid>
+        
+    </DockPanel>
+</Window>
